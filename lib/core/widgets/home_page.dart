@@ -12,6 +12,13 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      backgroundColor: Colors.black,
+      body: Column(
+        children: [
+          Image.asset("assets/images/profile.jpeg"),
+        ],
+      ),
+      // navigation
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 30,
@@ -61,4 +68,9 @@ class _HomepageState extends State<Homepage> {
       ),
     );
   }
+
+  // image
+
+  // Image.asset('assets/images/profile.jpeg');
+  
 }
