@@ -19,11 +19,13 @@ class _HomepageState extends State<Homepage> {
         ),
         
         child: Container(
+          // decorate/ style the container
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             color: Colors.green,
           ),
           
+          // add padding to the container
           child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: 30,
@@ -31,6 +33,7 @@ class _HomepageState extends State<Homepage> {
             ),
             
             child: GNav(
+              // add style Gnav
               gap: 10,
               backgroundColor: Colors.green,
               color: Colors.white,

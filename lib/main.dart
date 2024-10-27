@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gku_portfolio_app/core/widgets/homePage.dart';
+import 'package:gku_portfolio_app/core/widgets/home_page.dart';
 
 void main() {
   runApp(const MyApp());
