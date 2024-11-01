@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -15,8 +16,29 @@ class _HomepageState extends State<Homepage> {
       backgroundColor: Colors.black,
       body: Column(
         children: [
-          Image.asset("assets/images/profile.jpeg"),
-        ],
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset("assets/images/profile.jpeg",
+              height: 500,
+              width: 450,
+              ),
+            )
+            ),
+            
+            SizedBox(),
+
+            Text(
+              'Gilbert Kutoto',
+              style: GoogleFonts.lato(
+                textStyle: Theme.of(context).textTheme.displayLarge,
+                fontSize: 60,
+                fontWeight: FontWeight.w900,
+                // fontStyle: FontStyle.italic,
+                color: Colors.green,
+              ),
+            ),
+            ],
       ),
       // navigation
       bottomNavigationBar: Padding(
