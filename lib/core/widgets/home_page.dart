@@ -14,6 +14,46 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return  Scaffold(
       backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // logo
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 30,
+                vertical: 16
+              ),
+              child: Text(
+                "g.ku",
+                style: GoogleFonts.dancingScript(
+                  textStyle: TextStyle(
+                    fontSize: 48,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.green
+                  )
+                ),
+              ),
+            ),
+          
+          // nav icons
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                horizontal: 30,
+                vertical: 16
+              ),
+                child: Icon(
+                  Icons.menu,
+                  color: Colors.green,
+                  size: 30,
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
       body: Column(
         children: [
           Center(
@@ -91,8 +131,6 @@ class _HomepageState extends State<Homepage> {
     );
   }
 
-  // image
-
-  // Image.asset('assets/images/profile.jpeg');
+  
   
 }
