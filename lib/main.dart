@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gku_portfolio_app/core/widgets/home_page.dart';
-
+import 'pages/home_page.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -16,7 +15,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Gilbert Kutoto ',
       
-      home: Homepage(),
+      home: HomePage(),
+      
     );
   }
 }
