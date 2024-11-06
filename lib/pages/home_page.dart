@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gku_portfolio_app/widgets/bootom_gnav.dart';
+import 'package:gku/widgets/bootom_gnav.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -7,7 +7,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Text("Hello Gilbert"),
+      body: Center(
+        child: Text(
+          "Hello Gilbert",
+          style: TextStyle(fontSize: 30),
+        ),
+      ),
       bottomNavigationBar: NavBar(),
     );
   }
