@@ -6,11 +6,13 @@ class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Text(
-        "About Me",
-        style: TextStyle(
-          fontSize: 30.0,
-          
+      body: Center(
+        child: Text(
+          "About Me",
+          style: TextStyle(
+            fontSize: 30.0,
+            
+          ),
         ),
       ),
     );

@@ -6,10 +6,12 @@ class BlogsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Text(
-        "Blog Page",
-        style: TextStyle(
-          fontSize: 30
+      body: Center(
+        child: Text(
+          "Blog Page",
+          style: TextStyle(
+            fontSize: 30
+          ),
         ),
       ),
     );
