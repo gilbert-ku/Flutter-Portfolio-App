@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -13,6 +14,7 @@ class LandingPage extends StatelessWidget {
         children: [
           Column(
             children: [
+              // profile image
               Container(
                 height: height * .4,
                 width: width,
@@ -27,6 +29,8 @@ class LandingPage extends StatelessWidget {
                   fit: BoxFit.contain,
                 ),
               ),
+
+              // intro text
               Container(
                 decoration: BoxDecoration(
                   color: Colors.black,
@@ -39,6 +43,47 @@ class LandingPage extends StatelessWidget {
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(50),
+                    ),
+                  ),
+
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 17,
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          "Gilbert Kutoto",
+                          style: GoogleFonts.spicyRice(
+                            textStyle: TextStyle(
+                                fontSize: 64,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.green[800]),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "Software Engineer",
+                          style: GoogleFonts.spicyRice(
+                            textStyle: TextStyle(
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.green[800]),
+                          ),
+                        ),
+                        Text(
+                          "Flutter Developer",
+                          style: GoogleFonts.spicyRice(
+                            textStyle: TextStyle(
+                              fontSize: 34,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.green[800],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
