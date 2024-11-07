@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pages/home_page.dart';
+import 'package:gku/widgets/go_router.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -11,11 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Gilbert Kutoto ',
-      
-      home: HomePage(),
+      routerConfig: router,
+      // home: HomePage(),
       
     );
   }

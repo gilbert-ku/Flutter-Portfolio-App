@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:gku/widgets/bootom_gnav.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
+  
+  get child => null;
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return Scaffold(
+      body: const Center(
         child: Text(
           "Hello Gilbert",
           style: TextStyle(fontSize: 30),
         ),
       ),
-      bottomNavigationBar: NavBar(),
     );
   }
 }
