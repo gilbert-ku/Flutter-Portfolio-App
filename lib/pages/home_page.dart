@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:gku/widgets/landind_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatelessWidget { 
   const HomePage({super.key});
 
   get child => null;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        // backgroundColor: Colors.black,
+        
+        backgroundColor: Colors.black,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               child: Text(
                 "g.ku",
                 style: GoogleFonts.pacifico(
@@ -26,18 +28,14 @@ class HomePage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                
               ),
             ),
           ],
         ),
       ),
-      body: const Center(
-        child: Text(
-          "Hello Gilbert",
-          style: TextStyle(fontSize: 30),
-        ),
-      ),
+
+      body: LandingPage(),
+
     );
   }
 }
