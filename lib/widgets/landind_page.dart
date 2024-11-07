@@ -37,7 +37,7 @@ class LandingPage extends StatelessWidget {
                   color: Colors.black,
                 ),
                 child: Container(
-                  height: height * .3,
+                  height: height * .4,
                   width: width,
                   // color: Colors.white,
                   decoration: BoxDecoration(
@@ -49,7 +49,7 @@ class LandingPage extends StatelessWidget {
 
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 17,
+                      horizontal: 1,
                     ),
                     child: Column(
                       children: [
@@ -59,10 +59,15 @@ class LandingPage extends StatelessWidget {
                             textStyle: TextStyle(
                               fontSize: 64,
                               fontWeight: FontWeight.bold,
-                              color: Colors.green[800],
+                              color: Colors.green[600],
                             ),
                           ),
                         ),
+
+                        SizedBox(
+                          height: 20,
+                        ),
+
                         SizedBox(
                           height: 10,
                         ),
@@ -72,9 +77,13 @@ class LandingPage extends StatelessWidget {
                             textStyle: TextStyle(
                               fontSize: 40,
                               fontWeight: FontWeight.bold,
-                              color: Colors.green[800],
+                              color: Colors.green[600],
                             ),
                           ),
+                        ),
+
+                        SizedBox(
+                          height: 20,
                         ),
 
                         Text(
@@ -83,37 +92,52 @@ class LandingPage extends StatelessWidget {
                             textStyle: TextStyle(
                               fontSize: 34,
                               fontWeight: FontWeight.bold,
-                              color: Colors.green[800],
+                              color: Colors.green[600],
                             ),
                           ),
                         ),
 
+                        SizedBox(
+                          height: 20,
+                        ),
                         // icons
                         Row(
                           // crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             IconButton(
-                              onPressed: () {},
-                              icon: FaIcon(FontAwesomeIcons.github),
-                              // icon: FaIcon(FontAwesomeIcons.linkedin),
-                              // icon: FaIcon(FontAwesomeIcons.xTwitter),
-                              // icon: FaIcon(FontAwesomeIcons.instagram),
+                              onPressed: () {
+                                print("github");
+                              },
+                              icon: FaIcon(
+                                FontAwesomeIcons.github,
+                                size: 30,
+                                color: Colors.green,
+                              ),
                             ),
-
                             IconButton(
                               onPressed: () {},
-                              icon: FaIcon(FontAwesomeIcons.linkedin),
+                              icon: FaIcon(
+                                FontAwesomeIcons.linkedin,
+                                size: 30,
+                                color: Colors.green,
+                              ),
                             ),
-
                             IconButton(
                               onPressed: () {},
-                              icon: FaIcon(FontAwesomeIcons.xTwitter),
+                              icon: FaIcon(
+                                FontAwesomeIcons.xTwitter,
+                                size: 30,
+                                color: Colors.green,
+                              ),
                             ),
-
                             IconButton(
                               onPressed: () {},
-                              icon: FaIcon(FontAwesomeIcons.instagram),
+                              icon: FaIcon(
+                                FontAwesomeIcons.instagram,
+                                size: 30,
+                                color: Colors.green,
+                              ),
                             ),
                           ],
                         ),
