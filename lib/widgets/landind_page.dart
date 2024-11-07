@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -36,7 +37,7 @@ class LandingPage extends StatelessWidget {
                   color: Colors.black,
                 ),
                 child: Container(
-                  height: height * .4,
+                  height: height * .3,
                   width: width,
                   // color: Colors.white,
                   decoration: BoxDecoration(
@@ -56,9 +57,10 @@ class LandingPage extends StatelessWidget {
                           "Gilbert Kutoto",
                           style: GoogleFonts.spicyRice(
                             textStyle: TextStyle(
-                                fontSize: 64,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.green[800]),
+                              fontSize: 64,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.green[800],
+                            ),
                           ),
                         ),
                         SizedBox(
@@ -68,11 +70,13 @@ class LandingPage extends StatelessWidget {
                           "Software Engineer",
                           style: GoogleFonts.spicyRice(
                             textStyle: TextStyle(
-                                fontSize: 40,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.green[800]),
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.green[800],
+                            ),
                           ),
                         ),
+
                         Text(
                           "Flutter Developer",
                           style: GoogleFonts.spicyRice(
@@ -82,6 +86,36 @@ class LandingPage extends StatelessWidget {
                               color: Colors.green[800],
                             ),
                           ),
+                        ),
+
+                        // icons
+                        Row(
+                          // crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
+                              onPressed: () {},
+                              icon: FaIcon(FontAwesomeIcons.github),
+                              // icon: FaIcon(FontAwesomeIcons.linkedin),
+                              // icon: FaIcon(FontAwesomeIcons.xTwitter),
+                              // icon: FaIcon(FontAwesomeIcons.instagram),
+                            ),
+
+                            IconButton(
+                              onPressed: () {},
+                              icon: FaIcon(FontAwesomeIcons.linkedin),
+                            ),
+
+                            IconButton(
+                              onPressed: () {},
+                              icon: FaIcon(FontAwesomeIcons.xTwitter),
+                            ),
+
+                            IconButton(
+                              onPressed: () {},
+                              icon: FaIcon(FontAwesomeIcons.instagram),
+                            ),
+                          ],
                         ),
                       ],
                     ),
