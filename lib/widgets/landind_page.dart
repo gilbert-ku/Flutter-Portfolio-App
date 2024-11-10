@@ -11,11 +11,11 @@ class LandingPage extends StatelessWidget {
     final double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      body: Stack(
-        children: [
-          Column(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
             children: [
-              // profile image
+              // Profile Image
               Container(
                 height: height * .4,
                 width: width,
@@ -27,29 +27,30 @@ class LandingPage extends StatelessWidget {
                 ),
                 child: Image.asset(
                   "assets/images/profile.jpeg",
-                  fit: BoxFit.contain,
+                  // fit: BoxFit.cover,
                 ),
               ),
 
-              // intro text
+              // Intro Text and Social Icons
               Container(
                 decoration: BoxDecoration(
                   color: Colors.black,
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(50),
+                  ),
                 ),
                 child: Container(
-                  height: height * .4,
                   width: width,
-                  // color: Colors.white,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(50),
                     ),
                   ),
-
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 1,
+                      horizontal: 16.0,
+                      vertical: 20.0,
                     ),
                     child: Column(
                       children: [
@@ -57,52 +58,38 @@ class LandingPage extends StatelessWidget {
                           "Gilbert Kutoto",
                           style: GoogleFonts.spicyRice(
                             textStyle: TextStyle(
-                              fontSize: 64,
+                              fontSize: 48,
                               fontWeight: FontWeight.bold,
                               color: Colors.green[600],
                             ),
                           ),
                         ),
-
-                        SizedBox(
-                          height: 20,
-                        ),
-
-                        SizedBox(
-                          height: 10,
-                        ),
+                        SizedBox(height: 10),
                         Text(
                           "Software Engineer",
                           style: GoogleFonts.spicyRice(
                             textStyle: TextStyle(
-                              fontSize: 40,
+                              fontSize: 24,
                               fontWeight: FontWeight.bold,
                               color: Colors.green[600],
                             ),
                           ),
                         ),
-
-                        SizedBox(
-                          height: 20,
-                        ),
-
+                        SizedBox(height: 10),
                         Text(
                           "Flutter Developer",
                           style: GoogleFonts.spicyRice(
                             textStyle: TextStyle(
-                              fontSize: 34,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold,
                               color: Colors.green[600],
                             ),
                           ),
                         ),
+                        SizedBox(height: 20),
 
-                        SizedBox(
-                          height: 20,
-                        ),
-                        // icons
+                        // Social Icons
                         Row(
-                          // crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             IconButton(
@@ -111,7 +98,7 @@ class LandingPage extends StatelessWidget {
                               },
                               icon: FaIcon(
                                 FontAwesomeIcons.github,
-                                size: 30,
+                                size: 25,
                                 color: Colors.green,
                               ),
                             ),
@@ -119,7 +106,7 @@ class LandingPage extends StatelessWidget {
                               onPressed: () {},
                               icon: FaIcon(
                                 FontAwesomeIcons.linkedin,
-                                size: 30,
+                                size: 25,
                                 color: Colors.green,
                               ),
                             ),
@@ -127,7 +114,7 @@ class LandingPage extends StatelessWidget {
                               onPressed: () {},
                               icon: FaIcon(
                                 FontAwesomeIcons.xTwitter,
-                                size: 30,
+                                size: 25,
                                 color: Colors.green,
                               ),
                             ),
@@ -135,20 +122,59 @@ class LandingPage extends StatelessWidget {
                               onPressed: () {},
                               icon: FaIcon(
                                 FontAwesomeIcons.instagram,
-                                size: 30,
+                                size: 25,
                                 color: Colors.green,
                               ),
                             ),
                           ],
                         ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.green
+                            ),
+                              onPressed: () {},
+                              child: Center(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 8.0,
+                                      ),
+                                      child: Text(
+                                        "Resume",
+                                        style: GoogleFonts.spicyRice(
+                                          textStyle: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 15,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 8.0,
+                                      ),
+                                      child: Icon(
+                                        Icons.download,
+                                        size: 20,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )),
+                        )
                       ],
                     ),
                   ),
                 ),
               ),
             ],
-          )
-        ],
+          ),
+        ),
       ),
     );
   }

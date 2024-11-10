@@ -12,18 +12,17 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        
         backgroundColor: Colors.black,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
               child: Text(
                 "g.ku",
                 style: GoogleFonts.pacifico(
                   textStyle: TextStyle(
-                    fontSize: 40,
+                    fontSize: 30,
                     color: Colors.green,
                     fontWeight: FontWeight.bold,
                   ),

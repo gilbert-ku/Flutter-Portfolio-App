@@ -31,11 +31,7 @@ class MyApp extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        // buttonTheme: ButtonThemeData(
-        //   // Styling for buttons
-        //   buttonColor: Colors.green,
-        //   textTheme: ButtonTextTheme.primary,
-        // ),
+        
       ),
     );
   }
