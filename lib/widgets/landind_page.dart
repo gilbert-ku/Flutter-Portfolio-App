@@ -3,8 +3,35 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class LandingPage extends StatelessWidget {
+class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
+
+  @override
+  State<LandingPage> createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage> {
+  void _launchURL(Uri uri, bool inApp) async {
+    try {
+      if (await canLaunchUrl(uri)) {
+        if (inApp) {
+          await launchUrl(
+            uri,
+            mode: LaunchMode.inAppWebView,
+          );
+        } else {
+          await launchUrl(
+            uri,
+            mode: LaunchMode.externalApplication,
+          );
+        }
+      }
+    } catch (e) {
+      print(
+        e.toString(),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -94,9 +121,12 @@ class LandingPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             IconButton(
-                              onPressed: () async {
-                                
-                              },
+                              onPressed: () => _launchURL(
+                                Uri.parse(
+                                  "https://github.com/gilbert-ku",
+                                ),
+                                false,
+                              ),
                               icon: FaIcon(
                                 FontAwesomeIcons.github,
                                 size: 25,
@@ -104,7 +134,12 @@ class LandingPage extends StatelessWidget {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () => _launchURL(
+                                Uri.parse(
+                                  "https://www.linkedin.com/in/gilbert-kutoto/",
+                                ),
+                                false,
+                              ),
                               icon: FaIcon(
                                 FontAwesomeIcons.linkedin,
                                 size: 25,
@@ -112,7 +147,12 @@ class LandingPage extends StatelessWidget {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () => _launchURL(
+                                Uri.parse(
+                                  "https://x.com/gilbert45dope/",
+                                ),
+                                false,
+                              ),
                               icon: FaIcon(
                                 FontAwesomeIcons.xTwitter,
                                 size: 25,
@@ -120,7 +160,12 @@ class LandingPage extends StatelessWidget {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () => _launchURL(
+                                Uri.parse(
+                                  "https://www.instagram.com/dadykool_2five4/",
+                                ),
+                                false,
+                              ),
                               icon: FaIcon(
                                 FontAwesomeIcons.instagram,
                                 size: 25,
@@ -132,9 +177,9 @@ class LandingPage extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.green
-                            ),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.green,
+                              ),
                               onPressed: () {},
                               child: Center(
                                 child: Row(
