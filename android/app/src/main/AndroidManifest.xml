@@ -1,4 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- The android.permission.query_all_packages permission, 
+    introduced in Android 11 (API level 30), 
+    allows an app to query and interact with all installed apps on a device, 
+    regardless of their components -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+
     <application
         android:label="gku_portfolio_app"
         android:name="${applicationName}"
@@ -38,6 +45,18 @@
          In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin. -->
 
     <queries>
+        <!-- If your app broswer -->
+
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="htpps" />
+        </intent>
+
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:scheme="*/*" />
+        </intent>
+
         <!-- If your app checks for SMS support -->
         <intent>
             <action android:name="android.intent.action.VIEW" />
@@ -45,7 +64,7 @@
         </intent>
         <!-- If your app checks for call support -->
         <intent>
-            <action android:name="android.intent.action.VIEW" />
+            <action android:name="android.intent.action.DIAL" />
             <data android:scheme="tel" />
         </intent>
         <!-- If your application checks for inAppBrowserView launch mode support -->
