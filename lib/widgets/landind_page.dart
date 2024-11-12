@@ -177,41 +177,42 @@ class _LandingPageState extends State<LandingPage> {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.green,
-                              ),
-                              onPressed: () {},
-                              child: Center(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                        horizontal: 8.0,
-                                      ),
-                                      child: Text(
-                                        "Resume",
-                                        style: GoogleFonts.spicyRice(
-                                          textStyle: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 15,
-                                          ),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.green,
+                            ),
+                            onPressed: () {},
+                            child: Center(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 8.0,
+                                    ),
+                                    child: Text(
+                                      "Resume",
+                                      style: GoogleFonts.spicyRice(
+                                        textStyle: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 15,
                                         ),
                                       ),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                        horizontal: 8.0,
-                                      ),
-                                      child: Icon(
-                                        Icons.download,
-                                        size: 20,
-                                        color: Colors.white,
-                                      ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 8.0,
                                     ),
-                                  ],
-                                ),
-                              )),
+                                    child: Icon(
+                                      Icons.download,
+                                      size: 20,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         )
                       ],
                     ),
