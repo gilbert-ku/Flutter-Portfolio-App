@@ -11,6 +11,8 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+
+  // function to handle urls
   void _launchURL(Uri uri, bool inApp) async {
     try {
       if (await canLaunchUrl(uri)) {
