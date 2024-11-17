@@ -1,7 +1,11 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:path/path.dart' as p;
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -11,6 +15,52 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  String resumeUrl =
+      "https://drive.google.com/file/d/16DhIr0zTp4pHMLidXpdRvTEEj4-d9EPw/view?usp=sharing";
+
+// function to handle file download
+  void downloadFile(BuildContext context) async {
+    final status = await Permission.storage.request();
+
+    if (status.isGranted) {
+      final dir = await getExternalStorageDirectory();
+      if (dir != null) {
+        String saveName = "gilbert_cv.pdf";
+        String savePath = p.join(dir.path, saveName);
+
+        try {
+          await Dio().download(
+            resumeUrl,
+            savePath,
+            onReceiveProgress: (received, total) {
+              if (total != -1) {
+                print("${(received / total * 100).toStringAsFixed(0)}%");
+              }
+            },
+          );
+
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text("File Downloaded"),
+            ),
+          );
+        } catch (e) {
+          print("Download failed: ${e.toString()}");
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text("Download failed: ${e.toString()}"),
+            ),
+          );
+        }
+      }
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Permission Denied!"),
+        ),
+      );
+    }
+  }
 
   // function to handle urls
   void _launchURL(Uri uri, bool inApp) async {
@@ -177,12 +227,15 @@ class _LandingPageState extends State<LandingPage> {
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.symmetric(horizontal: 28),
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.green,
+                              
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              downloadFile(context);
+                            },
                             child: Center(
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
