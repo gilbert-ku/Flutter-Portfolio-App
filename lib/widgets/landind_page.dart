@@ -97,7 +97,7 @@ class _LandingPageState extends State<LandingPage> {
             children: [
               // Profile Image
               Container(
-                height: height * .4,
+                height: height /3,
                 width: width,
                 decoration: BoxDecoration(
                   color: Colors.black,
@@ -121,6 +121,7 @@ class _LandingPageState extends State<LandingPage> {
                 ),
                 child: Container(
                   width: width,
+                  height: height /2,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
