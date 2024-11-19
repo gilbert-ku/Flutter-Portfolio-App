@@ -297,16 +297,85 @@ class SkillsWidget extends StatelessWidget {
             ),
           ),
           
+          // firebase
           Container(
+            height: 200,
+            width: 200,
             padding: const EdgeInsets.all(5),
-            color: Colors.teal[200],
-            child: const Text('FireBase'),
+            // color: Colors.green[100],
+            decoration: BoxDecoration(
+              color: Colors.green[100],
+              borderRadius: BorderRadius.all(Radius.circular(30))
+            ),
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 4.0),
+                    child: Image.asset(
+                      "assets/images/firebase.png",
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 4),
+                    child: Text(
+                      "FireBase",
+                      style: GoogleFonts.domine(
+                        textStyle: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
+          
+          // mysql
+
           Container(
+            height: 200,
+            width: 200,
             padding: const EdgeInsets.all(5),
-            color: Colors.teal[200],
-            child: const Text('MySQL'),
+            // color: Colors.green[100],
+            decoration: BoxDecoration(
+              color: Colors.green[100],
+              borderRadius: BorderRadius.all(Radius.circular(30))
+            ),
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 4.0),
+                    child: Image.asset(
+                      "assets/images/mysql.png",
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 4),
+                    child: Text(
+                      "MySQL",
+                      style: GoogleFonts.domine(
+                        textStyle: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
+          
         ],
       ),
     );
