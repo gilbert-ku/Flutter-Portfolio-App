@@ -15,12 +15,13 @@ class BlogsPage extends StatelessWidget {
                 width: double.infinity,
                 height: 300,
                 decoration: BoxDecoration(
-                    image: DecorationImage(
-                  image: AssetImage(
-                    "assets/images/backround_image.png",
+                  image: DecorationImage(
+                    image: AssetImage(
+                      "assets/images/backround_image.png",
+                    ),
+                    fit: BoxFit.contain,
                   ),
-                  fit: BoxFit.contain,
-                )),
+                ),
                 child: Text(
                   "image",
                   style: TextStyle(

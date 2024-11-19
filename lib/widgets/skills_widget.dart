@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SkillsWidget extends StatelessWidget {
   const SkillsWidget({super.key});
@@ -21,9 +22,41 @@ class SkillsWidget extends StatelessWidget {
         crossAxisCount: 3,
         children: <Widget>[
           Container(
+            height: 200,
+            width: 200,
             padding: const EdgeInsets.all(5),
-            color: Colors.teal[100],
-            child: const Text("Figma"),
+            // color: Colors.green[100],
+            decoration: BoxDecoration(
+              color: Colors.green[100],
+              borderRadius: BorderRadius.all(Radius.circular(30))
+            ),
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 4.0),
+                    child: Image.asset(
+                      "assets/images/figma.png",
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 4),
+                    child: Text(
+                      "Figma",
+                      style: GoogleFonts.domine(
+                        textStyle: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
           Container(
             padding: const EdgeInsets.all(5),
