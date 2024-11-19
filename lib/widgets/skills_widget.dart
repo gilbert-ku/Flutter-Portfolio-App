@@ -217,16 +217,86 @@ class SkillsWidget extends StatelessWidget {
             ),
           ),
           
+          // django
           Container(
+            height: 200,
+            width: 200,
             padding: const EdgeInsets.all(5),
-            color: Colors.teal[200],
-            child: const Text('Django'),
+            // color: Colors.green[100],
+            decoration: BoxDecoration(
+              color: Colors.green[100],
+              borderRadius: BorderRadius.all(Radius.circular(30))
+            ),
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 4.0),
+                    child: Image.asset(
+                      "assets/images/django.png",
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 4),
+                    child: Text(
+                      "Django",
+                      style: GoogleFonts.domine(
+                        textStyle: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
+          
+
+          // Tailwind
+
           Container(
+            height: 200,
+            width: 200,
             padding: const EdgeInsets.all(5),
-            color: Colors.teal[100],
-            child: const Text("Tailwin"),
+            // color: Colors.green[100],
+            decoration: BoxDecoration(
+              color: Colors.green[100],
+              borderRadius: BorderRadius.all(Radius.circular(30))
+            ),
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 4.0),
+                    child: Image.asset(
+                      "assets/images/tailwind.png",
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 4),
+                    child: Text(
+                      "Tailwind",
+                      style: GoogleFonts.domine(
+                        textStyle: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
+          
           Container(
             padding: const EdgeInsets.all(5),
             color: Colors.teal[200],
