@@ -93,12 +93,7 @@ class AboutPage extends StatelessWidget {
               ),
             ],
           ),
-          const SkillsWidget(),
-          // SizedBox(height: 30),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text('Enabled'),
-          ),
+          
         ],
       ),
     );
