@@ -64,27 +64,54 @@ class _ResumeBtnState extends State<ResumeBtn> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 12,
-        vertical: 12,
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.green,
+            Colors.pink,
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(50), // Match the button's shape
+
+        // boxshadow
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            blurRadius: 8,
+            offset: Offset(4, 4),
+          ),
+        ],
       ),
       child: ElevatedButton.icon(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.transparent, // Set to transparent
+          shadowColor: Colors.transparent, // Remove default shadow
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50), // Match the container
+          ),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 12,
+            vertical: 12,
+          ),
+        ),
         onPressed: () {
           downloadFile(context);
         },
         label: Text(
-          " Download Resume",
+          "Download Resume",
           style: GoogleFonts.domine(
-            textStyle: TextStyle(
-              fontSize: 20,
-              color: Colors.pink,
+            textStyle: const TextStyle(
+              fontSize: 16,
+              color: Colors.white,
             ),
           ),
         ),
-        icon: Icon(
+        icon: const Icon(
           Icons.download,
-          color: Colors.pink,
+          color: Colors.white,
         ),
       ),
     );

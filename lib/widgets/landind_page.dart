@@ -65,15 +65,19 @@ class LandingPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       
                       children: [
-                        Text(
-                          "Gilbert Kutoto",
-                          style: GoogleFonts.domine(
-                            textStyle: TextStyle(
-                              fontSize: 45,
-                              fontWeight: FontWeight.bold,
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: Text(
+                            "Gilbert Kutoto",
+                            style: GoogleFonts.domine(
+                              textStyle: TextStyle(
+                                fontSize: 45,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ),
+                        SizedBox(height: 10,),
                         Text(
                           "Software Enineer",
                           style: GoogleFonts.domine(
@@ -83,6 +87,9 @@ class LandingPage extends StatelessWidget {
                             ),
                           ),
                         ),
+
+                        SizedBox(height: 10,),
+
                         Text(
                           "Flutter Developer",
                           style: GoogleFonts.domine(
@@ -92,62 +99,65 @@ class LandingPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            IconButton(
-                              onPressed: () => _launchURL(
-                                Uri.parse(
-                                  "https://github.com/gilbert-ku",
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              IconButton(
+                                onPressed: () => _launchURL(
+                                  Uri.parse(
+                                    "https://github.com/gilbert-ku",
+                                  ),
+                                  false,
                                 ),
-                                false,
-                              ),
-                              icon: FaIcon(
-                                FontAwesomeIcons.github,
-                                size: 25,
-                                color: Colors.green,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () => _launchURL(
-                                Uri.parse(
-                                  "https://www.linkedin.com/in/gilbert-kutoto/",
+                                icon: FaIcon(
+                                  FontAwesomeIcons.github,
+                                  size: 25,
+                                  color: Colors.green,
                                 ),
-                                false,
                               ),
-                              icon: FaIcon(
-                                FontAwesomeIcons.linkedin,
-                                size: 25,
-                                color: Colors.pink,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () => _launchURL(
-                                Uri.parse(
-                                  "https://x.com/gilbert45dope/",
+                              IconButton(
+                                onPressed: () => _launchURL(
+                                  Uri.parse(
+                                    "https://www.linkedin.com/in/gilbert-kutoto/",
+                                  ),
+                                  false,
                                 ),
-                                false,
-                              ),
-                              icon: FaIcon(
-                                FontAwesomeIcons.xTwitter,
-                                size: 25,
-                                color: Colors.green,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () => _launchURL(
-                                Uri.parse(
-                                  "https://www.instagram.com/dadykool_2five4/",
+                                icon: FaIcon(
+                                  FontAwesomeIcons.linkedin,
+                                  size: 25,
+                                  color: Colors.pink,
                                 ),
-                                false,
                               ),
-                              icon: FaIcon(
-                                FontAwesomeIcons.instagram,
-                                size: 25,
-                                color: Colors.pink,
+                              IconButton(
+                                onPressed: () => _launchURL(
+                                  Uri.parse(
+                                    "https://x.com/gilbert45dope/",
+                                  ),
+                                  false,
+                                ),
+                                icon: FaIcon(
+                                  FontAwesomeIcons.xTwitter,
+                                  size: 25,
+                                  color: Colors.green,
+                                ),
                               ),
-                            ),
-                          ],
+                              IconButton(
+                                onPressed: () => _launchURL(
+                                  Uri.parse(
+                                    "https://www.instagram.com/dadykool_2five4/",
+                                  ),
+                                  false,
+                                ),
+                                icon: FaIcon(
+                                  FontAwesomeIcons.instagram,
+                                  size: 25,
+                                  color: Colors.pink,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                         
                         ResumeBtn()
