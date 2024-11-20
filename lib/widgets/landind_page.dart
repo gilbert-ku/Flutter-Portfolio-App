@@ -53,7 +53,7 @@ class LandingPage extends StatelessWidget {
                 height: 400,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Colors.green[50],
                   // color: Colors.green[200],
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(50))
                 ),
