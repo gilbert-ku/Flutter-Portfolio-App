@@ -7,17 +7,62 @@ class BlogsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // backgroundColor: Colors.black,
-        body: Center(
-      child: Container(
-        color: Colors.green[200],
-        child: Center(
-          child: Text(
-            "Blog Posts",
-            style: TextStyle(fontSize: 50),
+      body: ListView(
+        children: [
+          Stack(
+            children: [
+              Center(
+                child: Image.asset(
+                  "assets/images/about_gilly.png",
+                ),
+              ),
+              Container(
+                color: Colors.pink[200],
+                height: 400,
+                width: double.infinity,
+                child: Column(
+                  children: [
+                    Text(
+                      "Gilbert Kutoto",
+                      style: GoogleFonts.domine(
+                        textStyle: TextStyle(
+                          fontSize: 45,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      "Software Enineer",
+                      style: GoogleFonts.domine(
+                        textStyle: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      "Flutter Developer",
+                      style: GoogleFonts.domine(
+                        textStyle: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    ElevatedButton.icon(
+                      onPressed: () {},
+                      label: Text(
+                        " Download Resume",
+                      ),
+                      icon: Icon(Icons.download),
+                    )
+                  ],
+                ),
+              )
+            ],
           ),
-        ),
+        ],
       ),
-    ));
+    );
   }
 }
