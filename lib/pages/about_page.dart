@@ -8,6 +8,7 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
+        physics: NeverScrollableScrollPhysics(),
         children: [
           Stack(
             children: [
@@ -19,7 +20,7 @@ class AboutPage extends StatelessWidget {
                     image: AssetImage(
                       "assets/images/backround_image.png",
                     ),
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
@@ -55,7 +56,7 @@ class AboutPage extends StatelessWidget {
                         horizontal: 30,
                       ),
                       child: Text(
-                        "I am a FullStack Software and Flutter Developer. With over two years of experience in software development, I specialize in Flutter and thrive on learning, collaboration, and creating impactful solutions.",
+                        "I am a Full-Stack Developer and Flutter Specialist with over two years of experience, focused on building innovative, user-centered solutions through continuous learning and collaboration",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.domine(
                           textStyle: const TextStyle(
@@ -91,6 +92,34 @@ class AboutPage extends StatelessWidget {
               children: _buildSkillCards(),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 15),
+            child: Padding(
+              padding: const EdgeInsets.only(
+                bottom: 12,
+                right: 30,
+                left: 30,
+              ),
+              child: ElevatedButton.icon(
+                onPressed: () {},
+                icon: Icon(Icons.next_plan_sharp),
+                label: Text(
+                  "C h e c k  M y  P r o j e c t s",
+                  style: GoogleFonts.domine(
+                    textStyle: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.pink,
+                    ),
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  iconColor: Colors.pink,
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
@@ -124,8 +153,10 @@ class AboutPage extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 4.0),
                 child: Image.asset(
                   skill['image']!,
-                  errorBuilder: (context, error, stackTrace) =>
-                      const Icon(Icons.broken_image, size: 50,),
+                  errorBuilder: (context, error, stackTrace) => const Icon(
+                    Icons.broken_image,
+                    size: 50,
+                  ),
                 ),
               ),
               Padding(
