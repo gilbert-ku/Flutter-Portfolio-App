@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:gku/widgets/resume_btn.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BlogsPage extends StatelessWidget {
   const BlogsPage({super.key});
+
   // function to handle urls
   void _launchURL(Uri uri, bool inApp) async {
     try {
@@ -147,19 +149,8 @@ class BlogsPage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 12,
-                          ),
-                          child: ElevatedButton.icon(
-                            onPressed: () {},
-                            label: Text(
-                              " Download Resume",
-                            ),
-                            icon: Icon(Icons.download),
-                          ),
-                        )
+                        
+                        ResumeBtn()
                       ],
                     ),
                   ),
