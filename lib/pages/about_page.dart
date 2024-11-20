@@ -107,15 +107,16 @@ class AboutPage extends StatelessWidget {
                   "C h e c k  M y  P r o j e c t s",
                   style: GoogleFonts.domine(
                     textStyle: TextStyle(
-                      fontSize: 16,
+                      fontSize: 26,
                       fontWeight: FontWeight.w700,
                       color: Colors.pink,
                     ),
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
+                  backgroundColor: Colors.transparent,
                   iconColor: Colors.pink,
+                  shadowColor: Colors.transparent,
                 ),
               ),
             ),
