@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gku/widgets/contact/contact_form.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ContactPage extends StatelessWidget {
@@ -85,7 +86,7 @@ class ContactPage extends StatelessWidget {
               ),
             ],
           ),
-          
+          ContactForm()
         ],
       ),
     );
