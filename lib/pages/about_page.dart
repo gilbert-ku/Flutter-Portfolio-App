@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gku/widgets/skills_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AboutPage extends StatelessWidget {
@@ -7,95 +6,145 @@ class AboutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.maybeOf(context);
-    final double height = mediaQuery?.size.height ?? 0;
-    final double width = mediaQuery?.size.width ?? 0;
-
     return Scaffold(
-      backgroundColor: Colors.black87,
       body: ListView(
         children: [
           Stack(
             children: [
-              // Background image container
               Container(
-                height: height / 2,
-                decoration: BoxDecoration(
+                height: 300,
+                decoration: const BoxDecoration(
+                  color: Colors.amber,
                   image: DecorationImage(
-                    image: AssetImage("assets/images/about_gilly.png"),
-                    fit: BoxFit.scaleDown,
+                    image: AssetImage(
+                      "assets/images/backround_image.png",
+                    ),
+                    fit: BoxFit.fill,
                   ),
                 ),
               ),
-              // Gradient overlay to create a blend effect on the image
               Container(
-                height: height / 2,
-                decoration: BoxDecoration(
+                height: 300,
+                decoration: const BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [
-                      Colors.transparent,
-                      // const Color.fromARGB(246, 34, 34, 34),
-                      Colors.green
-                    ],
+                    colors: [Colors.transparent, Colors.black],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                   ),
                 ),
               ),
-
-              // Centered text
               Positioned(
-                bottom: MediaQuery.of(context).size.height *
-                    0.1, // Adjusts bottom margin dynamically (5% of screen height)
+                bottom: 20,
                 left: 0,
                 right: 0,
-                child: Center(
-                  child: Container(
-                    color: Colors.transparent,
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 15),
-                          child: Text(
-                            "About Me",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.playfairDisplay(
-                              textStyle: TextStyle(
-                                fontSize: 40,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 5,
-                              ),
-                            ),
+                child: Column(
+                  children: [
+                    Text(
+                      "About Me",
+                      style: GoogleFonts.domine(
+                        textStyle: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 17,
+                        horizontal: 30,
+                      ),
+                      child: Text(
+                        "I am a FullStack Software and Flutter Developer. With over two years of experience in software development, I specialize in Flutter and thrive on learning, collaboration, and creating impactful solutions.",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.domine(
+                          textStyle: const TextStyle(
+                            fontSize: 17,
+                            color: Colors.white,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 30.0,
-                          ),
-                          child: Text(
-                            "I have more than two year of experience in software development and solutions. I am passionate about software development, always eager to learn new concepts, and possess a collaborative spirit, with a focus on detail and leadership in developing solutions that meet organizational and personal objectives.",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.playfairDisplay(
-                              textStyle: TextStyle(
-                                fontSize: 15,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w300,
-                                letterSpacing: 0.5,
-                              ),
-                            ),
-                          ),
+                      ),
+                    ),
+                    Text(
+                      "Skills",
+                      style: GoogleFonts.domine(
+                        textStyle: const TextStyle(
+                          fontSize: 35,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green,
                         ),
-                      ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: GridView.count(
+              primary: false,
+              shrinkWrap: true, // Prevent infinite height
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              crossAxisCount: 3,
+              children: _buildSkillCards(),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  List<Widget> _buildSkillCards() {
+    const skills = [
+      {'image': 'assets/images/figma.png', 'name': 'Figma'},
+      {'image': 'assets/images/flutter.png', 'name': 'Flutter'},
+      {'image': 'assets/images/nextjs.png', 'name': 'Next.JS'},
+      {'image': 'assets/images/react.png', 'name': 'React.JS'},
+      {'image': 'assets/images/python.png', 'name': 'Python'},
+      {'image': 'assets/images/django.png', 'name': 'Django'},
+      {'image': 'assets/images/tailwind.png', 'name': 'Tailwind'},
+      {'image': 'assets/images/firebase.png', 'name': 'Firebase'},
+      {'image': 'assets/images/mysql.png', 'name': 'MySQL'},
+    ];
+
+    return skills.map((skill) {
+      return Container(
+        decoration: BoxDecoration(
+          color: Colors.green[100],
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
+        ),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(bottom: 4.0),
+                child: Image.asset(
+                  skill['image']!,
+                  errorBuilder: (context, error, stackTrace) =>
+                      const Icon(Icons.broken_image, size: 50,),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 4),
+                child: Text(
+                  skill['name']!,
+                  style: GoogleFonts.domine(
+                    textStyle: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black,
                     ),
                   ),
                 ),
               ),
             ],
           ),
-          
-        ],
-      ),
-    );
+        ),
+      );
+    }).toList();
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gku/widgets/skills_widget.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BlogsPage extends StatelessWidget {
   const BlogsPage({super.key});
@@ -7,6 +7,7 @@ class BlogsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: Colors.black,
       body: Stack(
         children: [
           Column(
@@ -19,32 +20,49 @@ class BlogsPage extends StatelessWidget {
                     image: AssetImage(
                       "assets/images/backround_image.png",
                     ),
-                    fit: BoxFit.contain,
+                    fit: BoxFit.fill,
                   ),
                 ),
-                child: Text(
-                  "image",
-                  style: TextStyle(
-                    color: Colors.green,
-                    fontSize: 30,
+                
+                child: Positioned(
+                  bottom: 30,
+                  // left: 0,
+                  // right: 0,
+                  // top: 0,
+                  child: Column(
+                    children: [
+                      Text(
+                        "About Me",
+                        style: GoogleFonts.domine(
+                          textStyle: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        "With over two years of experience in software development, I specialize in Flutter and thrive on learning, collaboration, and creating impactful solutions.",
+                        style: GoogleFonts.domine(
+                          textStyle: TextStyle(
+                            fontSize: 17,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      Text(
+                        "Skill",
+                        style: GoogleFonts.domine(
+                          textStyle: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-              Expanded(
-                child: Container(
-                  color: Colors.white,
-                  child: SkillsWidget(),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.all(20.0),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "check my Projects",
-                  ),
-                ),
-              )
             ],
           ),
         ],
