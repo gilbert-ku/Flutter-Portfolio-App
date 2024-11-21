@@ -8,7 +8,8 @@ class ContactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[100],
+      backgroundColor: Colors.black,
+      // backgroundColor: Colors.green[100],
       body: Column(
         children: [
           Stack(
@@ -56,7 +57,7 @@ class ContactPage extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: GoogleFonts.dancingScript(
                               textStyle: TextStyle(
-                                fontSize: 24,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
