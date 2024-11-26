@@ -41,7 +41,7 @@ class ContactPage extends StatelessWidget {
                         "Let’s Work Together!",
                         style: GoogleFonts.dancingScript(
                           textStyle: TextStyle(
-                            fontSize: 40,
+                            fontSize: 30,
                             fontWeight: FontWeight.bold,
                             color: Colors.pink,
                           ),
@@ -57,7 +57,7 @@ class ContactPage extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: GoogleFonts.dancingScript(
                               textStyle: TextStyle(
-                                fontSize: 20,
+                                fontSize: 17,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
@@ -73,7 +73,7 @@ class ContactPage extends StatelessWidget {
                             "Fill out the form below, and I’ll reply shortly.",
                             style: GoogleFonts.dancingScript(
                               textStyle: TextStyle(
-                                fontSize: 24,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),

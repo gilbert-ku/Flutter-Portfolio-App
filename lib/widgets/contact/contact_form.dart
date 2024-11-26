@@ -33,6 +33,16 @@ class _ContactFormState extends State<ContactForm> {
             end: Alignment.bottomRight,
           ),
         ),
+        child: Column(
+          children: [
+            Form(
+              child: TextFormField(
+                maxLength: 50,
+                decoration: InputDecoration(helper: Text("Name")),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
