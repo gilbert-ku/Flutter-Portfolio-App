@@ -79,7 +79,7 @@ class LandingPage extends StatelessWidget {
                         ),
                         SizedBox(height: 10,),
                         Text(
-                          "Software Enineer",
+                          "Software Engineer",
                           style: GoogleFonts.domine(
                             textStyle: TextStyle(
                               fontSize: 30,

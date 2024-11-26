@@ -7,6 +7,7 @@ class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: ListView(
         physics: NeverScrollableScrollPhysics(),
         children: [
