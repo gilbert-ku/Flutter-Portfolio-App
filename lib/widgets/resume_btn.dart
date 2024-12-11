@@ -34,7 +34,7 @@ class _ResumeBtnState extends State<ResumeBtn> {
             savePath,
             onReceiveProgress: (received, total) {
               if (total != -1) {
-                print("${(received / total * 100).toStringAsFixed(0)}%");
+                debugPrint("${(received / total * 100).toStringAsFixed(0)}%");
               }
             },
           );
@@ -45,7 +45,7 @@ class _ResumeBtnState extends State<ResumeBtn> {
             ),
           );
         } catch (e) {
-          print("Download failed: ${e.toString()}");
+          debugPrint("Download failed: ${e.toString()}");
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text("Download failed: ${e.toString()}"),

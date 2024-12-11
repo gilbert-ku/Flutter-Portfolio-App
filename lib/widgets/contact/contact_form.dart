@@ -10,39 +10,55 @@ class ContactForm extends StatefulWidget {
 class _ContactFormState extends State<ContactForm> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        margin: EdgeInsets.all(20),
-        height: 400,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(35),
-          // boxshadow
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.5),
-              blurRadius: 8,
-              offset: Offset(4, 4),
-            ),
-          ],
-          gradient: LinearGradient(
-            colors: [
-              Colors.green.withOpacity(0.9),
-              Colors.pink.withOpacity(0.9),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
-        child: Column(
-          children: [
-            Form(
-              child: TextFormField(
-                maxLength: 50,
-                decoration: InputDecoration(helper: Text("Name")),
+    
+    final formKey = GlobalKey<FormState>();
+
+    return Form(
+      key: formKey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          TextFormField(
+
+            cursorColor: Colors.pink, // Ensures caret color matches the design
+            style: TextStyle(fontSize: 17),
+            decoration: InputDecoration(
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.greenAccent, width: 2.0),
+                borderRadius: BorderRadius.circular(12),
               ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.pink, width: 1.0),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              prefixIcon: Icon(
+                Icons.person,
+                color: Colors.pink,
+                size: 20, // Slightly increased size for better visibility
+              ),
+              hintText: 'What do people call you?',
+              hintStyle: TextStyle(
+                color: Color.fromRGBO(
+                    250, 246, 246, 0.6), // Slightly increased opacity
+                fontSize: 14, // Slightly larger for readability
+              ),
+              labelText: 'Name *',
+              labelStyle: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+              ),
+              contentPadding:
+                  EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
             ),
-          ],
-        ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter your name';
+              }
+              return null;
+            },
+          ),
+        ],
       ),
     );
   }
