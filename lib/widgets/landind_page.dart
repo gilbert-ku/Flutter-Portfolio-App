@@ -23,11 +23,12 @@ class LandingPage extends StatelessWidget {
           );
         }
       }
-    } catch (e) {
-      print(
-        e.toString(),
-      );
-    }
+    }  catch (e) {
+  // Log the error or handle it as needed
+  debugPrint('Error launching URL: $e');
+  // Return a more descriptive error object or handle the error gracefully
+  // return 'Failed to launch URL. Please try again later.';
+}
   }
 
   @override
@@ -53,17 +54,16 @@ class LandingPage extends StatelessWidget {
                 height: 400,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Colors.green[50],
-                  // color: Colors.green[200],
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(50))
-                ),
+                    color: Colors.green[50],
+                    // color: Colors.green[200],
+                    borderRadius:
+                        BorderRadius.only(topLeft: Radius.circular(50))),
                 child: Padding(
                   padding: const EdgeInsets.all(14.0),
                   child: Center(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
-                      
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(top: 8.0),
@@ -77,7 +77,9 @@ class LandingPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: 10,),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Text(
                           "Software Engineer",
                           style: GoogleFonts.domine(
@@ -87,9 +89,9 @@ class LandingPage extends StatelessWidget {
                             ),
                           ),
                         ),
-
-                        SizedBox(height: 10,),
-
+                        SizedBox(
+                          height: 10,
+                        ),
                         Text(
                           "Flutter Developer",
                           style: GoogleFonts.domine(
@@ -159,7 +161,6 @@ class LandingPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        
                         ResumeBtn()
                       ],
                     ),
