@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ContactForm extends StatefulWidget {
   const ContactForm({super.key});
@@ -15,7 +16,7 @@ class _ContactFormState extends State<ContactForm> {
     return Form(
       key: formKey,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // name
           TextFormField(
@@ -166,7 +167,6 @@ class _ContactFormState extends State<ContactForm> {
                 borderSide: BorderSide(color: Colors.pink, width: 1.0),
                 borderRadius: BorderRadius.circular(12),
               ),
-              
               hintText: 'Write a Message...',
               hintStyle: TextStyle(
                 color: Color.fromRGBO(
@@ -184,11 +184,69 @@ class _ContactFormState extends State<ContactForm> {
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return 'Please enter your email';
+                return 'Please write a message';
               }
               return null;
             },
           ),
+
+          // ElevatedButton(onPressed: () {}, child: Text("Send"))
+          SizedBox(height: 5,),
+          Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+              
+              gradient: LinearGradient(
+                colors: [
+                  Colors.green,
+                  Colors.pink,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius:
+                  BorderRadius.circular(50), // Match the button's shape
+
+              // boxshadow
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  blurRadius: 8,
+                  offset: Offset(4, 4),
+                ),
+              ],
+            ),
+            child: ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.transparent, // Set to transparent
+                shadowColor: Colors.transparent, // Remove default shadow
+                shape: RoundedRectangleBorder(
+                  borderRadius:
+                      BorderRadius.circular(50), // Match the container
+                ),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 12,
+                ),
+              ),
+              onPressed: () {
+                // downloadFile(context);
+              },
+              label: Text(
+                "Send",
+                style: GoogleFonts.domine(
+                  textStyle: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              icon: const Icon(
+                Icons.send,
+                color: Colors.white,
+              ),
+            ),
+          )
         ],
       ),
     );
