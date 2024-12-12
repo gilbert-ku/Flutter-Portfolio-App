@@ -8,8 +8,8 @@ class ContactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      // backgroundColor: Colors.green[100],
+      // backgroundColor: Colors.black,
+      backgroundColor: Colors.green[100],
       body: Column(
         children: [
           Stack(
