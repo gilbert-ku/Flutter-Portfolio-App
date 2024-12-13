@@ -8,7 +8,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  // This widget is the root of the application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
@@ -18,8 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
 
-        // Styling for scafold
+        // Styling for scaffold
         scaffoldBackgroundColor: Colors.white,
+
         // Styling for text
         textTheme: TextTheme(
           bodySmall: TextStyle(
@@ -31,7 +32,52 @@ class MyApp extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        
+
+        // Input style (InputDecorationTheme)
+        inputDecorationTheme: InputDecorationTheme(
+          // Borders
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: BorderSide(color: Colors.green, width: 2.0),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: BorderSide(color: Colors.pink, width: 1.0),
+          ),
+          // Error border (when validation fails)
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: BorderSide(color: Colors.red, width: 1.5),
+          ),
+          // Focused error border (when validation fails and field is focused)
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: BorderSide(color: Colors.red, width: 2.0),
+          ),
+          // Prefix icon style
+          prefixIconColor: Colors.pink,
+          // Hint text style
+          hintStyle: TextStyle(
+            color: Color.fromRGBO(250, 246, 246, 0.6),
+            fontSize: 14,
+          ),
+          // Label text style
+          labelStyle: TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+          ),
+          // Error text style
+          errorStyle: TextStyle(
+            color: Colors.redAccent,
+            fontSize: 14,
+          ),
+          // Padding inside the input field
+          contentPadding: EdgeInsets.symmetric(
+            vertical: 12.0,
+            horizontal: 16.0,
+          ),
+        ),
       ),
     );
   }

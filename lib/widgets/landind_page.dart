@@ -23,12 +23,12 @@ class LandingPage extends StatelessWidget {
           );
         }
       }
-    }  catch (e) {
-  // Log the error or handle it as needed
-  debugPrint('Error launching URL: $e');
-  // Return a more descriptive error object or handle the error gracefully
-  // return 'Failed to launch URL. Please try again later.';
-}
+    } catch (e) {
+      // Log the error or handle it as needed
+      debugPrint('Error launching URL: $e');
+      // Return a more descriptive error object or handle the error gracefully
+      // return 'Failed to launch URL. Please try again later.';
+    }
   }
 
   @override
