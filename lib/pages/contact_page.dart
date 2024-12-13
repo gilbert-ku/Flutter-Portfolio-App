@@ -106,7 +106,7 @@ class ContactPage extends StatelessWidget {
                 height: 10.0,
               ),
 
-              // text to field the form
+              // text form header
               Padding(
                 padding: const EdgeInsets.only(left: 8.0),
                 child: Text(
