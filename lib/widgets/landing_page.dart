@@ -26,14 +26,14 @@ class LandingPage extends StatelessWidget {
     } catch (e) {
       // Log the error or handle it as needed
       debugPrint('Error launching URL: $e');
-      // Return a more descriptive error object or handle the error gracefully
-      // return 'Failed to launch URL. Please try again later.';
+      
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // extendBodyBehindAppBar: true,
       backgroundColor: Colors.black,
       body: SizedBox(
         height: double.infinity,
@@ -43,7 +43,6 @@ class LandingPage extends StatelessWidget {
             Center(
               child: Image.asset(
                 "assets/images/profile.jpeg",
-                // "assets/images/about_gilly.png",
               ),
             ),
             Positioned(
@@ -57,7 +56,7 @@ class LandingPage extends StatelessWidget {
                     color: Colors.green[50],
                     // color: Colors.green[200],
                     borderRadius:
-                        BorderRadius.only(topLeft: Radius.circular(50))),
+                        BorderRadius.only(topLeft: Radius.circular(50,),),),
                 child: Padding(
                   padding: const EdgeInsets.all(14.0),
                   child: Center(

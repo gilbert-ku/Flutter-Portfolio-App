@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
 
         // Styling for scaffold
-        scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: Colors.green[100],
 
         // Styling for text
         textTheme: TextTheme(

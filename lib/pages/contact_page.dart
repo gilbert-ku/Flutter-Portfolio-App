@@ -33,127 +33,131 @@ class ContactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.black,
       backgroundColor: Colors.green[100],
-      body: ListView(
-        children: [
-          Column(
-            children: [
-              Stack(
-                children: [
-                  Container(
-                    height: 150,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      image: DecorationImage(
-                        image: AssetImage(
-                          "assets/images/contact_grid.png",
-                        ),
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    child: SizedBox(
+
+      body: MediaQuery.removePadding(
+        context: context,
+        removeTop: true,
+        child: ListView(
+          children: [
+            Column(
+              children: [
+                Stack(
+                  children: [
+                    Container(
                       height: 150,
                       width: double.infinity,
-                      // color: Colors.green[100],
-                      child: Column(
-                        children: [
-                          Text(
-                            "Let’s Work Together!",
-                            style: GoogleFonts.dancingScript(
-                              textStyle: TextStyle(
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.pink,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/images/contact_grid.png",
+                          ),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 45,
+                      left: 0,
+                      right: 0,
+                      child: SizedBox(
+                        height: 300,
+                        width: double.infinity,
+                        // color: Colors.green[100],
+                        child: Column(
+                          children: [
+                            Text(
+                              "Let’s Work Together!",
+                              style: GoogleFonts.domine(
+                                textStyle: TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.pink,
+                                ),
                               ),
                             ),
-                          ),
-                          Center(
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 8.0),
-                              child: Text(
-                                "Do you have a project in mind? I’d love to hear from you! Contact me for collaborations, freelance work, or general inquiries.",
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.domine(
-                                  // style: GoogleFonts.dancingScript(
-                                  textStyle: TextStyle(
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
+                            Center(
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8.0),
+                                child: Text(
+                                  "Do you have a project in mind? I’d love to hear from you! Contact me for collaborations, freelance work, or general inquiries.",
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.domine(
+                                    // style: GoogleFonts.dancingScript(
+                                    textStyle: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-
-              // handles contacts social handle
-              ContactSocialHandle(),
-
-              SizedBox(
-                height: 10.0,
-              ),
-
-              // text form header
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Text(
-                  "Fill out the form below, and I’ll reply shortly.",
-                  style: GoogleFonts.dancingScript(
-                    textStyle: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                  ],
+                ),
+        
+                // handles contacts social handle
+                ContactSocialHandle(),
+        
+                SizedBox(
+                  height: 10.0,
+                ),
+        
+                // text form header
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Text(
+                    "Fill out the form below, and I’ll reply shortly.",
+                    style: GoogleFonts.dancingScript(
+                      textStyle: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                 ),
-              ),
-
-              // form
-              ContactForm(),
-
-              // location
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  IconButton(
-                    onPressed: () => _launchURL(
-                      Uri.parse(
-                        "https://www.linkedin.com/in/gilbert-kutoto/",
+        
+                // form
+                ContactForm(),
+        
+                // location
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      onPressed: () => _launchURL(
+                        Uri.parse(
+                          "https://www.linkedin.com/in/gilbert-kutoto/",
+                        ),
+                        false,
                       ),
-                      false,
+                      icon: FaIcon(
+                        FontAwesomeIcons.locationPin,
+                        size: 17,
+                        color: Colors.green,
+                      ),
                     ),
-                    icon: FaIcon(
-                      FontAwesomeIcons.locationPin,
-                      size: 17,
-                      color: Colors.green,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Text(
+                        "Nairobi, Kenya",
+                        style: TextStyle(fontWeight: FontWeight.w700),
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Text(
-                      "Nairobi, Kenya",
-                      style: TextStyle(fontWeight: FontWeight.w700),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ],
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

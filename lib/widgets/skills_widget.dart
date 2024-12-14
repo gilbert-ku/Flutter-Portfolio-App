@@ -77,11 +77,11 @@ class SkillCards extends StatelessWidget {
 
     return skills.map((skill) {
       return Container(
-        
         height: 300,
-        margin: const EdgeInsets.symmetric(horizontal: 8.0),
+        margin: const EdgeInsets.symmetric(horizontal: 8.0,),
         decoration: BoxDecoration(
-          color: Colors.green[300],
+          // color: Colors.white,
+          color: Colors.green[200],
           borderRadius: BorderRadius.circular(20),
         ),
         child: Padding(
@@ -115,7 +115,7 @@ class SkillCards extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: GoogleFonts.domine(
                   textStyle: const TextStyle(
-                    fontSize: 14,
+                    fontSize: 15,
                     color: Colors.black87,
                   ),
                 ),
