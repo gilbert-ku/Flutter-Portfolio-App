@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gku/pages/about_page.dart';
-import 'package:gku/pages/blog_page.dart';
+// import 'package:gku/pages/blog_page.dart';
 import 'package:gku/pages/contact_page.dart';
 import 'package:gku/pages/home_page.dart';
+import 'package:gku/pages/projects_page.dart';
 import 'package:gku/widgets/bottom_gnav.dart';
 import 'package:go_router/go_router.dart';
 
@@ -25,14 +26,20 @@ final GoRouter router =
         path: '/about',
         builder: (context, state) => const AboutPage(),
       ),
+      // GoRoute(
+      //   path: '/blogs',
+      //   builder: (context, state) => const BlogsPage(),
+      // ),
       GoRoute(
-        path: '/blogs',
-        builder: (context, state) => const BlogsPage(),
+        path: '/about/projects',
+        builder: (context, state) => const ProjectsPage(),
       ),
       GoRoute(
         path: '/contact',
         builder: (context, state) => const ContactPage(),
       ),
+
+      
     ],
   )
 ]);

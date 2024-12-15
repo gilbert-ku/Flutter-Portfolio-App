@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gku/widgets/skills_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:go_router/go_router.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
@@ -86,7 +87,7 @@ class AboutPage extends StatelessWidget {
                 ),
               ],
             ),
-        
+
             // skills carousels
             Container(
               margin: EdgeInsets.symmetric(vertical: 20),
@@ -95,9 +96,10 @@ class AboutPage extends StatelessWidget {
                 child: SkillCards(),
               ),
             ),
-        
+
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
               child: Container(
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -111,7 +113,7 @@ class AboutPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(
                     50,
                   ), // Match the button's shape
-              
+
                   // boxshadow
                   boxShadow: [
                     BoxShadow(
@@ -135,7 +137,11 @@ class AboutPage extends StatelessWidget {
                       vertical: 12,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    context.go(
+                      '/about/projects',
+                    );
+                  },
                   label: Text(
                     "Check My Projects",
                     style: GoogleFonts.domine(

@@ -27,7 +27,7 @@ class NavBar extends StatelessWidget {
           tabs: const [
             GButton(icon: Icons.home, text: "Home"),
             GButton(icon: Icons.info, text: "About"),
-            GButton(icon: Icons.read_more, text: "Blogs"),
+            // GButton(icon: Icons.read_more, text: "Blogs"),
             GButton(icon: Icons.email, text: "Contact Me"),
           ],
           onTabChange: (index) {
@@ -38,10 +38,10 @@ class NavBar extends StatelessWidget {
               case 1:
                 context.go("/about"); // Navigate to About
                 break;
+              // case 2:
+              //   context.go("/blogs"); // Navigate to Blogs
+              //   break;
               case 2:
-                context.go("/blogs"); // Navigate to Blogs
-                break;
-              case 3:
                 context.go("/contact"); // Navigate to Contact
                 break;
             }
