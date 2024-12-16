@@ -12,9 +12,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      // routerConfig: goRouter,
+      routerConfig: router,
       debugShowCheckedModeBanner: false,
       title: 'Gilbert Kutoto ',
-      routerConfig: router,
       theme: ThemeData(
         primarySwatch: Colors.green,
 

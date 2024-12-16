@@ -89,4 +89,13 @@
             <data android:mimeType="text/plain"/>
         </intent>
     </queries>
+
+    <activity android:name=".MainActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="http" android:host="www.example.com" android:pathPrefix="/products" />
+        </intent-filter>
+    </activity>
 </manifest>

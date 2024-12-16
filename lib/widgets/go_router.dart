@@ -10,36 +10,33 @@ import 'package:go_router/go_router.dart';
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
-final GoRouter router =
-    GoRouter(navigatorKey: _rootNavigatorKey, initialLocation: "/", routes: [
-  ShellRoute(
-    navigatorKey: _shellNavigatorKey,
-    builder: (context, state, child) {
-      return NavBar(child: child);
-    },
-    routes: <RouteBase>[
-      GoRoute(
-        path: '/',
-        builder: (context, state) => const HomePage(),
-      ),
-      GoRoute(
-        path: '/about',
-        builder: (context, state) => const AboutPage(),
-      ),
-      // GoRoute(
-      //   path: '/blogs',
-      //   builder: (context, state) => const BlogsPage(),
-      // ),
-      GoRoute(
-        path: '/about/projects',
-        builder: (context, state) => const ProjectsPage(),
-      ),
-      GoRoute(
-        path: '/contact',
-        builder: (context, state) => const ContactPage(),
-      ),
-
-      
-    ],
-  )
-]);
+final GoRouter router = GoRouter(
+  navigatorKey: _rootNavigatorKey,
+  initialLocation: "/",
+  routes: [
+    ShellRoute(
+      navigatorKey: _shellNavigatorKey,
+      builder: (context, state, child) => NavBar(child: child),
+      routes: <RouteBase>[
+        GoRoute(
+          path: '/',
+          builder: (context, state) => const HomePage(),
+        ),
+        GoRoute(
+          path: '/about',
+          builder: (context, state) => const AboutPage(),
+          routes: [
+            GoRoute(
+              path: 'projects', // Nested under `/about`
+              builder: (context, state) => const ProjectsPage(),
+            ),
+          ],
+        ),
+        GoRoute(
+          path: '/contact',
+          builder: (context, state) => const ContactPage(),
+        ),
+      ],
+    ),
+  ],
+);

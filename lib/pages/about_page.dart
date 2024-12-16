@@ -138,7 +138,7 @@ class AboutPage extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    context.go(
+                    context.push(
                       '/about/projects',
                     );
                   },
