@@ -6,7 +6,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ContactPage extends StatelessWidget {
-
   const ContactPage({super.key});
 
   void _launchURL(Uri uri, bool inApp) async {
@@ -34,7 +33,6 @@ class ContactPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.green[100],
-
       body: MediaQuery.removePadding(
         context: context,
         removeTop: true,
@@ -101,14 +99,14 @@ class ContactPage extends StatelessWidget {
                     ),
                   ],
                 ),
-        
+
                 // handles contacts social handle
                 ContactSocialHandle(),
-        
+
                 SizedBox(
                   height: 10.0,
                 ),
-        
+
                 // text form header
                 Padding(
                   padding: const EdgeInsets.only(left: 8.0),
@@ -123,10 +121,10 @@ class ContactPage extends StatelessWidget {
                     ),
                   ),
                 ),
-        
+
                 // form
                 ContactForm(),
-        
+
                 // location
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -149,7 +147,9 @@ class ContactPage extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
                         "Nairobi, Kenya",
-                        style: TextStyle(fontWeight: FontWeight.w700),
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ),
                   ],

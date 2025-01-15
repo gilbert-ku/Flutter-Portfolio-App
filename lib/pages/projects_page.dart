@@ -21,14 +21,17 @@ class ProjectsPage extends StatelessWidget {
               title: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    // Main title
-                    'Projects', 
-                    style: GoogleFonts.domine(
-                      textStyle: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black, 
+                  Padding(
+                    padding: const EdgeInsets.only(top: 18.0),
+                    child: Text(
+                      // Main title
+                      'Projects', 
+                      style: GoogleFonts.domine(
+                        textStyle: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black, 
+                        ),
                       ),
                     ),
                   ),
